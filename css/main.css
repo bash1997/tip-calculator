@@ -1,4 +1,412 @@
-/*-----MOBILE First; width: 425px;-------*/
+/*! HTML5 Boilerplate v7.2.0 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 2.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
 html {
-  font-size: 16px;
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+   body {
+     background: #a4d4ff;
+     font-size: 1em;
+     color: #222;
+   }
+
+   .app {
+     background: white;
+     width: 100%;
+     max-width: 750px;
+     padding: 0 0 1.25em;
+     margin: .125em auto;
+     border-radius: 1.5rem;
+   }
+
+   h1 {
+     font-family: 'Playfair Display', serif;
+     font-weight: 700;
+   }
+
+   h3, label {
+     font-size: 1.25em;
+     padding-bottom: .25rem;
+     font-weight: 600;
+     font-family: 'Playfair Display', serif;
+   }
+
+   input, select {
+     height: 2.5em;
+     width: 87%;
+     font-size: 1.125em;
+     border: none;
+     outline: none;
+     font-family: 'Playfair Display', serif;
+     font-weight: 500;
+   }
+
+   p, h4, h4 span {
+     font-size: 1.125em;
+     font-family: 'Playfair Display', serif;
+     font-weight: 500;
+   }
+
+   #subtotalDiv p {
+     background: #f1f1f1;
+     padding: .496rem;
+     margin: 0;
+   }
+
+   #title {
+     background: #a4a7ff;
+     color: #fff;
+     text-transform: capitalize;
+     text-shadow: .375rem .1875rem .375rem #222;
+     height: 5em;
+     max-height: 7em;
+     width: 100%;
+     border-radius: 1.5rem 1.5rem 0 0;
+     display: flex;
+     justify-content: center;
+     margin: 0;
+   }
+
+   #subtotalDiv,
+   #serviceDiv,
+   #peopleDiv,
+   #result {
+     margin: .9375rem;
+     margin-bottom: 0;
+   }
+
+   #subtotalDiv p,
+   #subtotalDiv input,
+   #peopleDiv p,
+   #peopleDiv input {
+     display: inline;
+   }
+
+   #subtotalDiv label,
+   #serviceDiv label,
+   #service input {
+     display: block;
+   }
+
+   #buttonDiv {
+     display: flex;
+     justify-content: center;
+     margin: .9375rem 0;
+   }
+
+   #buttonClick {
+     color: #fff;
+     background: #a4fffd;
+     text-shadow: .0625em .0625em .125em #222, 0 0 1em blue, 0 0 0.2em #ffa4a6;
+     border: none;
+     border-radius: 1.5265rem;
+     width: 60%;
+     font-size: 1.25em;
+     outline: none;
+     font-weight: 600;
+   }
+
+   #buttonClick:active {
+     background: #a4a7ff;
+     text-shadow: .0625em .0625em .125em #a4d4ff, 0 0 6em #a4fffd, 0 0 0.4em blue;
+   }
+
+   #result {
+     display: none;
+   }
+/*
+   footer {
+
+   } */
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden {
+  display: none !important;
+}
+
+/*
+* Hide only visually, but have it available for screen readers:
+* https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+*
+* 1. For long content, line feeds are not interpreted as spaces and small width
+*    causes content to wrap 1 word per line:
+*    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+*/
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+* Extends the .sr-only class to allow the element
+* to be focusable when navigated to via the keyboard:
+* https://www.drupal.org/node/897638
+*/
+
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+* Hide visually and from screen readers, but maintain layout
+*/
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+* Clearfix: contain floats
+*
+* For modern browsers
+* 1. The space content is one way to avoid an Opera bug when the
+*    `contenteditable` attribute is included anywhere else in the document.
+*    Otherwise it causes space to appear at the top and bottom of elements
+*    that receive the `clearfix` class.
+* 2. The use of `table` rather than `block` is only necessary if using
+*    `:before` to contain the top-margins of child elements.
+*/
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+
+  .app {
+    width: 75%;
+    margin: 2.5em auto 0;
+  }
+}
+
+@media only screen and (min-width: 51em){
+  .app {
+    border-radius: 3.5rem;
+  }
+
+  #title {
+    border-radius: 2.5rem 2.5rem 0 0;
+    height: 6em;
+    max-height: 7em;
+  }
+
+  h1 {
+    font-size: 2.35em;
+  }
+
+  h3, label {
+    font-size: 1.55em;
+  }
+
+  input, select {
+    font-size: 1.35em;
+  }
+
+  #buttonClick {
+    font-size: 1.55em;
+    border-radius: 3.53rem;
+  }
+}
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster */
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+  pre {
+    white-space: pre-wrap !important;
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  /*
+     * Printing Tables:
+     * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+  thead {
+    display: table-header-group;
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
 }

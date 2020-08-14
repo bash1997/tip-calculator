@@ -1,14 +1,87 @@
 <!doctype html>
-<html lang="en">
-    <head>
-        <title>Title Goes Here</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/basic-nav.css">
-    </head>
-    <body>
+<html class="no-js" lang="">
 
-    </body>
+<head>
+  <meta charset="utf-8">
+  <title>Tip Calculator</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <div class="app">
+      <div id="title">
+        <h1>tip calculator</h1>
+       </div>
+
+    <form name="tipForm" action="" method="get">
+      <div id="subtotalDiv">
+        <label for="subtotal">What is your subtotal?</label>
+        <p>$</p>
+        <input type="number" step=".01" id="subtotal" placeholder="Bill Subtotal" value="" required>
+      </div>
+
+      <div id="serviceDiv">
+        <label for="service">How great was your service?</label>
+        <select id="service" required>
+          <option value="5">I hated my servicer (5%)</option>
+          <option value="10">Service could have been better (10%)</option>
+          <option value="15" selected>Standard service (15%)</option>
+          <option value="20"> Deserves something extra (20%)</option>
+          <option value="25">loved, Loved, LOVED my servicer (25%)</option>
+          <option value="30">Invited my servicer to our family reunion (30%)</option>
+        </select>
+      </div>
+
+      <div id="peopleDiv">
+        <label for="people">How many ways are you splitting the bill?</label>
+        <input type="number" id="people" placeholder="# of people" value="" required>
+      </div>
+
+      <div id="buttonDiv">
+        <input type="button" id="buttonClick" value="Calculate"></input>
+      </div>
+    </form>
+      <div id="result">
+        <h3> Calculation Results: </h3>
+        <h4> Total Tip Ammount: $<span id="totalTip"></span></h4>
+        <h4> Tip Per Person: $<span id="perPerson" step=".01"></span></h4>
+      </div>
+  </div>
+
+  <!-- <footer>
+    <p>made with love BSH</p>
+  </footer> -->
+
+
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
 </html>
