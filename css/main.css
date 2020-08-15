@@ -99,8 +99,6 @@ textarea {
    ========================================================================== */
    body {
      background: #a4d4ff;
-     font-size: 1em;
-     color: #222;
    }
 
    .app {
@@ -210,12 +208,16 @@ textarea {
 
    .footer {
      color: #a4d4ff;
-     width: 30%;
-     margin: 30px auto 0;
+     display: flex;
+     justify-content: center;
    }
 
    .footer p {
      margin: 0;
+   }
+
+   .footer p span {
+     font-size: 1.25em;
    }
 /* ==========================================================================
    Helper classes
